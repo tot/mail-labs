@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="build/tailwind.css">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <title>MailLabs</title>
+</head>
+
+<body class="bg-background font-body lg:overflow-y-hidden">
+  <div class="w-full flex justify-end pt-8 pr-8">
+    <div @click.away="open = false" class="relative w-full flex justify-end" x-data="{ open: false }">
+      <button @click="open = !open"
+        class="flex flex-row items-center w-auto text-gray-600 text-left focus:outline-none">
+
+        <div
+          class="h-8 w-8 md:h-12 md:w-12 bg-cover bg-center rounded-full overflow-hidden border-2 border-solid border-primary"
+          style="background-image: url('assets/pfp.png')"></div>
+        <svg viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+          class="fill-current text-gray-500 inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+          <path fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <div x-show="open" x-transition:enter="transition ease-out duration-100"
+        x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
+        x-transition:leave-end="transform opacity-0 scale-95"
+        class="absolute right-0 w-auto mt-12 md:mt-16 origin-top-right rounded-md shadow-lg md:w-48 z-30">
+        <div class="px-2 py-2 bg-body border border-solid border-body-border rounded-md shadow">
+          <a class=" text-title block px-4 py-3 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:bg-package focus:outline-none"
+            href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              class="fill-current mr-2 inline-flex align-middle w-6 h-6" width="20" height="20" viewBox="0 0 24 24">
+              <path
+                d="M19.952,5.672c-1.904-1.531-4.916-1.79-5.044-1.801c-0.201-0.017-0.392,0.097-0.474,0.281 c-0.006,0.012-0.072,0.163-0.145,0.398c1.259,0.212,2.806,0.64,4.206,1.509c0.224,0.139,0.293,0.434,0.154,0.659 c-0.09,0.146-0.247,0.226-0.407,0.226c-0.086,0-0.173-0.023-0.252-0.072C15.584,5.38,12.578,5.305,12,5.305S8.415,5.38,6.011,6.872 c-0.225,0.14-0.519,0.07-0.659-0.154c-0.14-0.225-0.07-0.519,0.154-0.659c1.4-0.868,2.946-1.297,4.206-1.509 c-0.074-0.236-0.14-0.386-0.145-0.398C9.484,3.968,9.294,3.852,9.092,3.872c-0.127,0.01-3.139,0.269-5.069,1.822 C3.015,6.625,1,12.073,1,16.783c0,0.083,0.022,0.165,0.063,0.237c1.391,2.443,5.185,3.083,6.05,3.111c0.005,0,0.01,0,0.015,0 c0.153,0,0.297-0.073,0.387-0.197l0.875-1.202c-2.359-0.61-3.564-1.645-3.634-1.706c-0.198-0.175-0.217-0.477-0.042-0.675 c0.175-0.198,0.476-0.217,0.674-0.043c0.029,0.026,2.248,1.909,6.612,1.909c4.372,0,6.591-1.891,6.613-1.91 c0.198-0.172,0.5-0.154,0.674,0.045c0.174,0.198,0.155,0.499-0.042,0.673c-0.07,0.062-1.275,1.096-3.634,1.706l0.875,1.202 c0.09,0.124,0.234,0.197,0.387,0.197c0.005,0,0.01,0,0.015,0c0.865-0.027,4.659-0.667,6.05-3.111 C22.978,16.947,23,16.866,23,16.783C23,12.073,20.985,6.625,19.952,5.672z M8.891,14.87c-0.924,0-1.674-0.857-1.674-1.913 s0.749-1.913,1.674-1.913s1.674,0.857,1.674,1.913S9.816,14.87,8.891,14.87z M15.109,14.87c-0.924,0-1.674-0.857-1.674-1.913 s0.749-1.913,1.674-1.913c0.924,0,1.674,0.857,1.674,1.913S16.033,14.87,15.109,14.87z">
+              </path>
+            </svg>Join Discord</a>
+          <a class="text-title block px-4 py-3 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:bg-package focus:outline-none"
+            href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              class="fill-current mr-2 inline-flex align-middle w-6 h-6" width="20" height="20" viewBox="0 0 24 24">
+              <path
+                d="M 8 2 C 6.895 2 6 2.895 6 4 L 6 20 C 6 21.105 6.895 22 8 22 L 16 22 C 17.105 22 18 21.105 18 20 L 18 13 L 12 13 C 11.448 13 11 12.552 11 12 C 11 11.448 11.448 11 12 11 L 18 11 L 18 4 C 18 2.895 17.105 2 16 2 L 8 2 z M 18 11 L 18 13 L 20 13 L 20 14.400391 C 20 14.723391 20.195141 15.014672 20.494141 15.138672 C 20.593141 15.179672 20.697781 15.199219 20.800781 15.199219 C 21.008781 15.199219 21.211234 15.119797 21.365234 14.966797 L 23.765625 12.564453 C 24.077625 12.252453 24.077625 11.745594 23.765625 11.433594 L 21.365234 9.0332031 C 21.136234 8.8052031 20.794141 8.7383281 20.494141 8.8613281 C 20.195141 8.9853281 20 9.2766094 20 9.5996094 L 20 11 L 18 11 z">
+              </path>
+            </svg>
+            Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="assets/Logo.png" class="mx-auto pt-10">
+  <form id="form" class="m-8 text-center relative mx-auto px-4 xl:px-0 mt-10" x-data="price()">
+    <!-- progressbar -->
+    <ul id="progressbar" class="w-full md:w-1/2 xl:w-1/4 mx-auto">
+      <li class="active">Select package</li>
+      <li>Choose amount</li>
+      <li>Pay</li>
+    </ul>
+    <!-- fieldsets -->
+    <div id="step1"
+      class="fieldset w-full md:w-1/2 xl:w-1/4 mx-auto bg-body border border-solid border-body-border p-6">
+      <div class="plan w-full cursor-pointer p-4 flex rounded-t border border-inactive border-solid bg-package">
+        <div class="mr-4 flex items-center">
+          <svg class="fill-current text-inactive-icon mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            width="24px" height="24px">
+            <path
+              d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 6 L 11 12.414062 L 15.292969 16.707031 L 16.707031 15.292969 L 13 11.585938 L 13 6 L 11 6 z" />
+          </svg>
+        </div>
+        <div class="flex flex-col flex-1 text-left">
+          <span class="flex justify-between pb-2">
+            <h1 class="title text-title font-medium text-base">Aged</h1>
+            <p class="text-base font-medium text-gray-300">$<span class="price">3.50</span></p>
+          </span>
+          <p class="description text-paragraph text-sm">
+            Duis elementum lectus lorem, quis ultrices ante consequat non.
+          </p>
+        </div>
+      </div>
+      <div class="plan cursor-pointer p-4 flex border border-inactive border-solid bg-package">
+        <div class="mr-4 flex items-center">
+          <svg class="fill-current text-inactive-icon mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            width="24px" height="24px">
+            <path
+              d="M 12 2 A 2 2 0 0 0 10 4 A 2 2 0 0 0 11 5.7304688 L 11 8 L 8 8 C 5.8026661 8 4 9.8026661 4 12 L 4 16 L 2 16 L 2 18 L 4 18 L 4 20 C 4 21.093063 4.9069372 22 6 22 L 18 22 C 19.093063 22 20 21.093063 20 20 L 20 18 L 22 18 L 22 16 L 20 16 L 20 12 C 20 9.8026661 18.197334 8 16 8 L 13 8 L 13 5.7285156 A 2 2 0 0 0 14 4 A 2 2 0 0 0 12 2 z M 8 10 L 11 10 L 13 10 L 16 10 C 17.116666 10 18 10.883334 18 12 L 18 20 L 15 20 L 15 18 L 9 18 L 9 20 L 6 20 L 6 12 C 6 10.883334 6.8833339 10 8 10 z M 9.5 13 A 1.5 1.5 0 0 0 8 14.5 A 1.5 1.5 0 0 0 9.5 16 A 1.5 1.5 0 0 0 11 14.5 A 1.5 1.5 0 0 0 9.5 13 z M 14.5 13 A 1.5 1.5 0 0 0 13 14.5 A 1.5 1.5 0 0 0 14.5 16 A 1.5 1.5 0 0 0 16 14.5 A 1.5 1.5 0 0 0 14.5 13 z" />
+          </svg>
+        </div>
+        <div class="flex flex-col flex-1 text-left">
+          <span class="flex justify-between pb-2">
+            <h1 class="title text-title font-medium text-base">Warm</h1>
+            <p class="text-base font-medium text-gray-300">$<span class="price">2.50</span></p>
+          </span>
+          <p class="description text-paragraph text-sm">
+            Duis elementum lectus lorem, quis ultrices ante consequat non.
+          </p>
+        </div>
+      </div>
+      <div class="plan cursor-pointer p-4 flex rounded-b border border-inactive border-solid bg-package">
+        <div class="mr-4 flex items-center">
+          <svg class="fill-current text-inactive-icon mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            width="24px" height="24px">
+            <path
+              d="M 4 4 C 2.897 4 2 4.897 2 6 L 2 18 C 2 19.103 2.897 20 4 20 L 20 20 C 21.103 20 22 19.103 22 18 L 22 6 C 22 4.897 21.103 4 20 4 L 4 4 z M 4 6 L 20 6 L 20.001953 18 L 4 18 L 4 6 z M 5 9 L 5 15 L 6.1347656 15 L 6.1347656 11.052734 L 8.3457031 15 L 9.4824219 15 L 9.4824219 9 L 8.3496094 9 L 8.3496094 12.955078 L 6.1367188 9 L 5 9 z M 10 9 L 10 15 L 13.693359 15 L 13.695312 15 L 13.695312 14.007812 L 11.136719 14.007812 L 11.136719 12.400391 L 13.316406 12.400391 L 13.316406 11.431641 L 11.136719 11.431641 L 11.136719 10.001953 L 13.6875 10.001953 L 13.6875 9 L 10 9 z M 14 9 L 14 14 C 14 14.55 14.374984 15 14.833984 15 L 18.167969 15 C 18.625969 15 19 14.55 19 14 L 19 9 L 17.958984 9 L 17.958984 13.5 L 17.025391 13.5 L 17.025391 9.9902344 L 15.984375 9.9902344 L 15.984375 13.509766 L 15.042969 13.509766 L 15.042969 9 L 14 9 z" />
+          </svg>
+        </div>
+        <div class="flex flex-col flex-1 text-left">
+          <span class="flex justify-between pb-2">
+            <h1 class="title text-title font-medium text-base">Fresh</h1>
+            <p class="text-base font-medium text-gray-300">$<span class="price">1.50</span></p>
+          </span>
+          <p class="description text-paragraph text-sm">
+            Duis elementum lectus lorem, quis ultrices ante consequat non.
+          </p>
+        </div>
+      </div>
+      <div class="flex">
+        <input type="button" name="next" id="next" disabled class="next cursor-not-allowed action-button w-full"
+          value="Next" />
+      </div>
+    </div>
+    <div id="step2"
+      class="fieldset w-full md:w-1/2 xl:w-1/4 mx-auto bg-body border border-solid border-body-border p-6 select-none text-left">
+      <h1 class="text-left text-base text-gray-100">Currently selected package</h1>
+      <div class="my-4 p-6 rounded-b border-solid border border-primary bg-bg-selected">
+        <div class="flex flex-col flex-1 text-left">
+          <span class="flex justify-between pb-2">
+            <h1 id="title" class="text-title font-medium text-base"></h1>
+            <p class="text-base font-medium text-gray-300">$<span id="price"></span></p>
+          </span>
+          <p id="description" class="text-selected-paragraph text-sm">
+          </p>
+        </div>
+      </div>
+      <fieldset class="w-full">
+        <input type="range" name="amountRange" x-model="quantity" min="1" max="20" class="slider" id="slider"
+          oninput="amountInput.value=amountRange.value">
+        <label for="amountInput" class="text-title pr-2">Quantity: </label>
+        <input type="number" id="amount" name="amountInput" x-model="quantity" min="1"
+          oninput="amountRange.value=amountInput.value" class="mt-4 w-20 bg-body text-title">
+      </fieldset>
+      <div class="flex justify-between pt-8">
+        <p class="text-title text-lg">Total price:</p>
+        <h1 class="text-primary text-2xl font-bold"><span class="font-normal text-base align-top">$</span><span
+            x-text="showPrice()"></span></h1>
+      </div>
+      <div class="flex justify-between">
+        <input type="button" name="previous"
+          class="previous action-button bg-back border border-back-border cursor-pointer mr-2" value="Previous" />
+        <input type="button" x-bind:class="{'bg-primary': checkAmount()}" x-bind:disabled="checkAmount2()" name="next"
+          id="next-amount" class="next action-button cursor-not-allowed ml-2" value="Next" />
+      </div>
+    </div>
+    <div id="step3" class="fieldset w-full md:w-2/3 xl:w-5/12 xl:flex xl:grid xl:grid-cols-5 gap-8 mx-auto text-left">
+      <div class="xl:col-span-3 bg-body border border-solid border-body-border p-6 rounded">
+        <label for="cardholder" class="text-title">Cardholder</label>
+        <input name="cardholder"
+          class="mt-2 mb-5 p-3 bg-form-bg border border-form-border rounded w-full text-form-text"
+          placeholder="John Doe">
+        <label for="cardnum" class="text-title mb-1">Card number</label>
+        <input name="cardnum" class="mt-2 mb-5 p-3 bg-form-bg border border-form-border rounded w-full text-form-text"
+          placeholder="4469 6636 2565 6633">
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <label for="expiry" class="text-title mb-1">Expiry</label>
+            <input name="expiry"
+              class="mt-2 mb-5 p-3 bg-form-bg border border-form-border rounded w-full text-form-text"
+              placeholder="4469 6636 2565 6633">
+          </div>
+          <div>
+            <label for="cvv" class="text-title mb-1">CVV</label>
+            <input name="cvv" class="mt-2 mb-5 p-3 bg-form-bg border border-form-border rounded w-full text-form-text"
+              placeholder="4469 6636 2565 6633">
+          </div>
+        </div>
+        <label for="email" class="text-title mb-1">Email</label>
+        <input name="email" class="mt-2 mb-5 p-3 bg-form-bg border border-form-border rounded w-full text-form-text"
+          placeholder="john@domain.com">
+        <div class="flex justify-between">
+          <input type="button" name="previous" class="previous2 action-button bg-back border border-back-border mr-2"
+            value="Previous" />
+          <input type="submit" name="submit" class="submit action-button bg-primary ml-2" value="Submit" />
+        </div>
+      </div>
+      <div
+        class="mt-8 xl:mt-0 xl:col-span-2 bg-body border border-solid border-body-border p-6 rounded flex flex-col flex-1 bg-gray-500">
+        <h1 class="text-title pb-2">Order Summary</h1>
+        <div class="p-4 rounded-b border-solid border border-primary bg-bg-selected relative">
+          <span class="flex justify-between pb-2">
+            <h1 id="checkout-title" class="text-title font-medium text-base"></h1>
+            <p class="text-base font-medium text-gray-300">$<span id="checkout-price"></span></p>
+          </span>
+          <p id="checkout-description" class="text-left text-gray-500 text-sm">
+          </p>
+          <div class="absolute quantity-body">
+            <p class="bg-primary text-title flex justify-center items-center text-xs rounded-full h-8 w-8">x<span
+                x-text="showQuantity()"></span></p>
+          </div>
+        </div>
+        <div class="w-full border-b border-solid border-divider my-3"></div>
+        <input id="code" class="w-full p-3 text-form-text bg-form-bg border border-form-border rounded mb-4"
+          placeholder="Enter discount code">
+        <button type="button" onclick="createDiscount();"
+          class="bg-primary w-full font-bold text-title rounded p-3">Apply</button>
+        <div id="discounts">
+
+        </div>
+        <div class="mt-4">
+          <div class="flex justify-between">
+            <p class="text-price-title">Discount</p>
+            <p class="text-price text-xl"><span class="text-sm align-top">-$</span>2.00</p>
+          </div>
+          <div class="w-full border-b border-solid border-divider my-3"></div>
+          <div class="flex justify-between">
+            <p class="text-price-title">Total</p>
+            <p class="text-primary font-bold text-2xl"><span class="text-sm font-normal align-top">$</span>2.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <img src="assets/4.svg" class="c-4">
+  <img src="assets/3.svg" class="c-3">
+  <img src="assets/2.svg" class="c-2">
+  <img src="assets/1.svg" class="c-1">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="js/plans.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/checkout.js"></script>
+  <script>
+    function price() {
+      return {
+        quantity: '0',
+        discount: '',
+        showPrice() {
+          var price = document.getElementById("price").innerText;
+          return this.quantity * price;
+        },
+        showQuantity() {
+          return this.quantity;
+        },
+        checkAmount() {
+          if (document.getElementById("amount").value > 0) {
+            return true;
+          }
+        },
+        checkAmount2() {
+          if (document.getElementById("amount").value <= 0) {
+            return true;
+          }
+        },
+
+      };
+    }
+  </script>
+
+</body>
+
+</html>
